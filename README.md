@@ -1,2 +1,2 @@
 # ejpython
-ejercicios de pseudo en python pq python es mejor q pseudo
+ejercicios del duoc y propios de python!
