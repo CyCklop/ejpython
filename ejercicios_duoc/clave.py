@@ -1,3 +1,4 @@
+#programa clave con if
 clave = 2233
 contra = int(input("Ingresa tu clave: "))
 
