@@ -1,11 +1,11 @@
 clave = 2233
-intento = [0,3] #inicial,maximo
-password = int(input("Ingresa la clave: "))
-while clave!=password:
-    print(f"Clave incorrecta, intente denuevo (Intentos Restantes: {intento[1]})")
+intento = 3
+print(f"Tienes {intento} intentos para ingresar la clave")
+while intento>0:
     password = int(input("Ingresa la clave: "))
-    intento[1]+=-1
-if intento[1]<=0:
-    print("Se acabaron los intentos, bloqueando acceso...")
-else:
-    print("¡Clave correcta!, Accediendo al sistema...")
+    if clave==password:
+        print("Accediendo al sistema...")
+        break
+    else:
+        intento-=1
+        print(f"Clave incorrecta, te quedan {intento} intentos" if intento>0 else "Ya no te quedan más intentos, bloqueando sistema..")
