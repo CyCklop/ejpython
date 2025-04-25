@@ -7,5 +7,7 @@ lista = [
     ["Clancy","Album",2024],
     ["The line","Single",2024]
 ]
+anlista = [1,2,3]
 
-print(lista[0])
+lista.append(anlista)
+print(lista)
