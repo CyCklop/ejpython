@@ -1,7 +1,7 @@
 total = 0
 
 ingre = int(input("BANCO ESTADO\nPara sacar un credito debe ingresar sus ingresos, nivel educacional y nacionalidad\nEscriba sus ingresos: "))
-if ingre<=1000000:
+if ingre<=1000001:
     print("Puede sacar un credito inicial de 300.000$")
     total+=300000
 elif ingre<=1500000:
