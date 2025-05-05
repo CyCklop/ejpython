@@ -6,4 +6,4 @@ if digit2<=digit:
     print("El segundo numero no puede ser menor o igual al primero")
 else:
     for i in range(random_digit):
-        print("*")
+        print("▄")
