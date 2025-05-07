@@ -1,11 +1,5 @@
 import time
 import random
-cate = ["Categoria",200,400,600]
-prod = [
-    "Deporte",8000,8500,38000,
-    "Enlatados",4500,5000,4000,
-    "Carnes",13000,7000,7500
-]
 total = 0
 
 opcion = int(input("Selecione una categoria\n1- Deporte\n2- Enlatados\n3- Carnes\n"))
@@ -15,9 +9,11 @@ if opcion == 1:
         print("Has comprado 1 Pelota de BasketBall")
         total+=8000
     elif opcion2 ==2:
-        pass
+        print("Has comprado 1 Pelota de Fútbol")
+        total+=8500
     elif opcion2 ==3:
-        pass
+        print("Has comprado un par de Zapatillas Deportivas")
+        total+=38000
     else:
         print("Selecciona una opcion valida")
 elif opcion == 2:
@@ -26,9 +22,11 @@ elif opcion == 2:
         print("Has comprado 1 Atún al agua")
         total+=4500
     elif opcion2 ==2:
-        pass
+        print("Has comprado 1 Tarro de jurel en medallon")
+        total+=5000
     elif opcion2 ==3:
-        pass
+        print("Has comprado 1 Salsa de tomate")
+        total+=4000
     else:
         print("Selecciona una opcion valida")
 elif opcion == 3:
@@ -37,9 +35,11 @@ elif opcion == 3:
         print("Has comprado 1 Posta paleta")
         total+=13000
     elif opcion2 ==2:
-        pass
+        print("Has comprado 1 Carne molida especial")
+        total+=7000
     elif opcion2 ==3:
-        pass
+        print("Has comprado 1 pechuga de pollo")
+        total+=7500
     else:
         print("Selecciona una opcion valida")
 else:
