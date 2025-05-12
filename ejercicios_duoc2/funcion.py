@@ -21,6 +21,7 @@ def div():
         num2 = int(input("Seleccione el segundo número: "))
         print(f"El resultado de la suma es {num/num2}")
     except ZeroDivisionError:
+        time.sleep(1)
         return print("ERROR,no se puede dividir por cero")
         
 
