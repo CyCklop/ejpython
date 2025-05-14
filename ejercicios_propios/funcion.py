@@ -11,3 +11,12 @@
 #    return #devolvera solo la primera impresión como si fuera un muro
 #    print("Segunda impresion")
 #imprimir()
+
+#variable = 3 #variable de tipo global
+
+#def funcion():
+#    global variable
+#    variable = 0 #variable local (dentro de funcion)
+#    print(variable)
+#funcion()
+#print(variable)
