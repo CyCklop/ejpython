@@ -22,7 +22,7 @@ def div():
         print(f"El resultado de la suma es {num/num2}")
     except ZeroDivisionError:
         time.sleep(1)
-        return print("ERROR,no se puede dividir por cero")
+        return "ERROR,no se puede dividir por cero"
 
 def calcu():
     op = int(input("Seleccione una opcion\n1- Suma\n2- Resta\n3- Multiplicación\n4- Division\n5- Salir\n"))
