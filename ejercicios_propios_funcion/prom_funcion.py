@@ -3,8 +3,8 @@ def notas():
     notas = []
     for i in range(op):
         op2 = int(input(f"Ingresa la {i+1} nota "))
-        notas.append(op2)
-    resultado = sum(notas)/op
+        notas.append(op2) #agrega un valor al final de la lista "notas[]"
+    resultado = sum(notas)/op #sum suma todos los elementos int y float de la lista "notas[]"
     if resultado>=4:
         print("Usted aprobo el ramo")
     else:
