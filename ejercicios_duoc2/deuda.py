@@ -25,7 +25,7 @@ def main():
                     print("Saliendo...")
                     break
                 case _:
-                    print("Ingresa un número correcto")
+                    print("Ingresa un opción correcta")
         except Exception:
             print("Ingrese un valor númerico")
 
@@ -50,5 +50,4 @@ def compras():
                 break
         except Exception:
             print("Ingresa un valor númerico")
-
 main()
