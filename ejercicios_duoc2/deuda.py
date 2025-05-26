@@ -15,8 +15,6 @@ def main():
                     elif valor<=deuda:
                         deuda-=valor
                         print(f"Has pagado {valor} de una deuda actual de {deuda} pesos")
-                    else:
-                        print("El valor ingresado debe ser mayor a 0")
                 case 2:
                     print("Entrando a menú de compras...")
                     time.sleep(1)
