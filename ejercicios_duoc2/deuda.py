@@ -10,7 +10,9 @@ def main():
             match op:
                 case 1:
                     valor = int(input("Ingrese el monto a pagar: "))
-                    if valor>=deuda:
+                    if valor<=0:
+                        print("El monto ingresado debe ser mayor a 0")
+                    elif valor>=deuda:
                         print("No puede exceder el total de su saldo")
                     elif valor<=deuda:
                         deuda-=valor
