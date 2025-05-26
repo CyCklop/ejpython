@@ -11,14 +11,16 @@ def main():
                     if not users:
                         print("No hay usuarios registrados, debes registrar uno")
                     else:
-                        pass
+                        op2 = str(input("Ingresa tu nombre de usuario: "))
+                        pas2 = input("Ingresa tu contraseña: ")
+                        if op2 and pas2 in users or passwd:
+                            print("Has iniciado sesión correctamente")
+                            submenu()
                 case 2:
                     user = str(input("Ingresa el nombre de tu usuario: "))
                     users.append(user)
-                    print(users)
                     passw = input("Ingresa una contraseña: ")
                     passwd.append(passw)
-                    print(passwd)
                 case 3:
                     print("Saliendo..")
                     break
@@ -30,7 +32,7 @@ def main():
 def submenu():
     while True:
         try:
-            op2 = int(input("1) Realizar llamada\n2) Enviar correo electrónico\n3) Cerrar sesión"))
+            op2 = int(input("1) Realizar llamada\n2) Enviar correo electrónico\n3) Cerrar sesión\n"))
             match op2:
                 case 1:
                     pass
