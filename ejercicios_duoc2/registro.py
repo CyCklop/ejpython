@@ -1,48 +1,49 @@
-users = []
-passwd = []
-##CODIGO SIN TERMINAR
+userpas = []
+
 def main():
-    global users, passwd
+    global userpas
     while True:
         try:
-            op = int(input("1) Iniciar sesión\n2) Registrar usuario\n3) Salir\n"))
+            op = int(input("1) Iniciar Sesión\n2) Registrar Usuario\n3) Salir\n"))
             match op:
                 case 1:
-                    if not users:
-                        print("No hay usuarios registrados, debes registrar uno")
-                    else:
-                        op2 = str(input("Ingresa tu nombre de usuario: "))
-                        pas2 = input("Ingresa tu contraseña: ")
-                        if op2 and pas2 in users or passwd:
-                            print("Has iniciado sesión correctamente")
-                            submenu()
+                    if len(userpas) == 0:
+                        print("No hay usuarios creados, debes crear minimo 1")
+                        continue 
+                    elif len(userpas)>=1:
+                        valiname = str(input("Escribe el nombre de un usuario: "))
+                        valipass = input("Escribe la contraseña correspondiente al usuario: ")
+                        for name,pasw in userpas:
+                            if valiname == name and valipass == pasw:
+                                print("Ingresando al sistema...")
+                                submenu()
                 case 2:
-                    user = str(input("Ingresa el nombre de tu usuario: "))
-                    users.append(user)
-                    passw = input("Ingresa una contraseña: ")
-                    passwd.append(passw)
+                    for i in range(3):
+                        name = str(input(f"Crea tu nombre del usuario/a {i+1}: "))
+                        pasw = input(f"Crea la contraseña del usuario {i+1}: ")
+                        userpas.append([name,pasw])
+                        print(userpas)
                 case 3:
                     print("Saliendo..")
                     break
                 case _:
-                    print("Ingrese una opción correcta")
+                    print("Elija una opción valida")
         except Exception:
-            print("Error, ingrese un valor correcto")
+            print("Error, Ingrese un número")
 
 def submenu():
     while True:
         try:
-            op2 = int(input("1) Realizar llamada\n2) Enviar correo electrónico\n3) Cerrar sesión\n"))
-            match op2:
+            op = int(input("1) Realizar llamada\n2) Enviar correo electrónico\n3) Cerrar Sesión\n"))
+            match op:
                 case 1:
                     pass
                 case 2:
                     pass
                 case 3:
-                    print("Volviendo...")
-                    break
+                    pass
                 case _:
-                    print("Ingrese una opción correcta")
+                    print("Elija una opción valida")
         except Exception:
-            print("Error, ingrese un valor correcto")
+            print("Error, Ingrese un número")
 main()
