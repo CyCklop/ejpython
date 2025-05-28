@@ -41,7 +41,8 @@ def submenu():
                 case 2:
                     pass
                 case 3:
-                    pass
+                    print("Volviendo...")
+                    break
                 case _:
                     print("Elija una opción valida")
         except Exception:
