@@ -1,5 +1,6 @@
 product = []
 precio = []
+carrito = []
 def main():
     global product,precio
     while True:
@@ -14,7 +15,7 @@ def main():
                 case 2:
                     submenu()
                 case 3:
-                    boleta()
+                    pass
                 case 4:
                     print("Saliendo..")
                     break
@@ -37,6 +38,4 @@ def submenu():
         except Exception:
             print("Ingrese un valor númerico")
 
-def boleta():
-    pass
 main()
