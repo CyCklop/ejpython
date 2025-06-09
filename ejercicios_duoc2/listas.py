@@ -1,6 +1,27 @@
-cant = int(input("Ingrese la cantidad de números que quiere añadir a la lista: "))
-list = []
-for i in range(cant):
-    num = int(input(f"Ingrese el número {i} de la lista: "))
-    list.append(num)
-print(f"La lista quedo con estos datos: {list}")
+print("1- Ingresar un nombre\n2- Mostrar nombres y apellidos\n3- Buscar nombre\n4- Salir")
+op = int(input())
+nombre = []
+apelli = []
+while True:
+    match op:
+        case 1:
+            nom = input("Ingrese su nombre: ")
+            nombre.append(nom)
+            ape = input("Ingrese su apellido: ")
+            apelli.append(ape)
+        case 2:
+            c = 0
+            for i in nombre:
+                print(nombre[c], apelli[c])
+                c+=1
+        case 3:
+            busca = input("Indique que nombre buscar: ")
+            if busca in nombre:
+                print(f"el nombre {busca} esta en la lista")
+            else:
+                print(f"el nombre {busca} no se encuentra en la lista")
+        case 4:
+            print("Saliendo..")
+            break
+        case _:
+            print("Error, Seleccione una opción valida")
