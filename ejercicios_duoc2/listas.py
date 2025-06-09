@@ -1,8 +1,8 @@
-print("1- Ingresar un nombre\n2- Mostrar nombres y apellidos\n3- Buscar nombre\n4- Salir")
-op = int(input())
 nombre = []
 apelli = []
 while True:
+    print("1- Ingresar un nombre\n2- Mostrar nombres y apellidos\n3- Buscar nombre\n4- Salir")
+    op = int(input())
     match op:
         case 1:
             nom = input("Ingrese su nombre: ")
