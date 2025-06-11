@@ -31,10 +31,7 @@ def borrar():
     while True:
         try:
             borrar = int(input(f"Selecciona cual nota borrar de la lista {nota}: "))
-            for borrar in nota:
-                nota.pop(borrar)
-            else:
-                print("Error, la nota no se encuentra dentro de la lista")
+            nota.remove(borrar)
             print("Nota borrada excitosamente..")
             time.sleep(1)
             break
@@ -59,4 +56,5 @@ def show():
     while True:
         print(f"¡Tus notas son: {nota}!")
         break
+
 main()
