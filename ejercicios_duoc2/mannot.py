@@ -54,7 +54,11 @@ def notas():
 def show():
     global nota
     while True:
-        print(f"¡Tus notas son: {nota}!")
+        if len(nota)>0:
+            print(f"¡Tus notas son: {nota}!")
+        else:
+            print("No hay notas ingresadas para mostrar")
+            time.sleep(1)
         break
 
 def borrar2():
