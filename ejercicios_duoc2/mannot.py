@@ -1,3 +1,4 @@
+import time
 nota = []
 
 def main():
@@ -8,11 +9,11 @@ def main():
             op = int(input())
             match op:
                 case 1:
-                    nota()
+                    notas()
                 case 2:
-                    pass
+                    borrar()
                 case 3:
-                    pass
+                    show()
                 case 4:
                     pass
                 case 5:
@@ -25,8 +26,22 @@ def main():
         except Exception:
             print("Error, ingrese un valor númerico")
 
+def borrar():
+    global nota
+    while True:
+        try:
+            borrar = int(input(f"Selecciona cual nota borrar de la lista {nota}: "))
+            for borrar in nota:
+                nota.pop(borrar)
+            else:
+                print("Error, la nota no se encuentra dentro de la lista")
+            print("Nota borrada excitosamente..")
+            time.sleep(1)
+            break
+        except Exception:
+            print("Error, ingrese un valor númerico")
 
-def nota():
+def notas():
     global nota
     while True:
         try:
@@ -34,7 +49,14 @@ def nota():
             for i in range(cant):
                 notsa = int(input(f"Ingresa la nota {i+1}: "))
                 nota.append(notsa)
-            print(nota)
+                print("¡Nota agregada!")
+            break
         except Exception:
             print("Error, ingrese un valor númerico")
+
+def show():
+    global nota
+    while True:
+        print(f"¡Tus notas son: {nota}!")
+        break
 main()
