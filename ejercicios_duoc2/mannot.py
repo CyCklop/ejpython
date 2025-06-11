@@ -17,7 +17,7 @@ def main():
                 case 4:
                     pass
                 case 5:
-                    pass
+                    borrar2()
                 case 6:
                     print("Saliendo...")
                     break
@@ -36,7 +36,7 @@ def borrar():
             time.sleep(1)
             break
         except Exception:
-            print("Error, ingrese un valor númerico")
+            print("Error, ingrese una nota que este dentro de la lista")
 
 def notas():
     global nota
@@ -56,5 +56,23 @@ def show():
     while True:
         print(f"¡Tus notas son: {nota}!")
         break
+
+def borrar2():
+    global nota
+    while True:
+        try:
+            op = int(input("Al hacer esto se borrarán todas las notas\n1- Aceptar\n2- Volver\n"))
+            match op:
+                case 1:
+                    print("Borrando todas las notas..")
+                    time.sleep(1)
+                    nota.clear()
+                    print("Notas borradas excitosamente")
+                    break
+                case 2:
+                    print("Volviendo al menú principal...")
+                    break
+        except Exception:
+            print("Error, ingrese un valor númerico")
 
 main()
