@@ -1,2 +1,1 @@
-# ejpython
-ejercicios del duoc y propios de python!
+<h1 align="center">♦️Ejercicios del DUOC y PROPIOS de PYTHON♦️</h1>
