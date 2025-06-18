@@ -1,12 +1,12 @@
 list_prod=[
     {"nombre":"zapato", 
-     "precio":20000, 
-     "categoria": "vestuario",
-     "tamaño": "mediano",
-     "enOferta": False},
+    "precio":20000, 
+    "categoria": "vestuario",
+    "tamaño": "mediano",
+    "enOferta": False},
 
     {"nombre":"pelota", 
-     "precio":24000}
+    "precio":24000}
 ]
 
 def mostrar_art(lista):
