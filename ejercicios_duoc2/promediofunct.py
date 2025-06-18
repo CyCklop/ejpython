@@ -21,7 +21,7 @@ def main():
                 case 3:
                     print(f"Las notas actuales son: {notas}")
                 case 4:
-                    resultado = sum(notas)/cant
+                    resultado = sum(notas)/len(notas)
                     reresultado = round(resultado)
                     print(f"El promedio es de: {reresultado}")
                 case 5:
