@@ -26,7 +26,7 @@ while True:
             case 2:
                 mostrar_art(list_prod)
             case 3:
-                # for n, p in enumerate(list_prod):
+                # for n, p n enumerate(list_prod):
                 #     print(n+1, ".- ", p)
                 for i in range(len(list_prod)):
                     print(i+1, ".-", list_prod[i])
