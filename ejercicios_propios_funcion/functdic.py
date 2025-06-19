@@ -6,13 +6,12 @@ users = {
 }
 
 def ingresar():
-    largo_dic = list(users.keys())[-1]
-    print(largo_dic)
+    largo_dic = list(users.keys())[-1] #devuelve una vista de las claves del diccionario como lista: "[1,2,3]" y se situa en el ultimo elemento de la lista
     nom = input("Ingresa el nombre: ")
     age = int(input("Ingresa la edad: "))
     num = int(input("Ingresa el número telefonico: "))
     job = int(input("¿Usted trabaja?\n1) No\n2) Si\nSeleccione una opción: "))
-    users[largo_dic+1]={"nombre": nom, "edad": age, "numero": [num], "trabajo": bool(job-1)}
+    users[largo_dic+1]={"nombre": nom, "edad": age, "numero": [num], "trabajo": bool(job-1)} # luego esto suma una clave más al diccionario en users[largo_dic+1]
 
 def update():
     for key,value in users.items():
