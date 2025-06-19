@@ -1,4 +1,4 @@
-# MEMORIZA TODOOOO ESTO O CAGASTE
+# MEMORIZA TODOOOOOOOOOOOOO ESTO O CAGASTE
 users = {
     1: {"nombre": "Ignacio Flores","edad": 19,"numero":  [12345678],"trabajo": False},
     2: {"nombre": "Ignacio Flores","edad": 19,"numero":  [12345678],"trabajo": False},
