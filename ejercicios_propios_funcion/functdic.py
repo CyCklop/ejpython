@@ -1,16 +1,7 @@
 users = {
-    1: {"nombre": "Ignacio Flores",
-        "edad": 19,
-        "numero":  [12345678],
-        "trabajo": False},
-    2: {"nombre": "Ignacio Flores",
-        "edad": 19,
-        "numero":  [12345678],
-        "trabajo": False},
-    3: {"nombre": "Ignacio Flores",
-        "edad": 19,
-        "numero":  [12345678],
-        "trabajo": False}
+    1: {"nombre": "Ignacio Flores","edad": 19,"numero":  [12345678],"trabajo": False},
+    2: {"nombre": "Ignacio Flores","edad": 19,"numero":  [12345678],"trabajo": False},
+    3: {"nombre": "Ignacio Flores","edad": 19,"numero":  [12345678],"trabajo": False}
 }
 
 def ingresar(diccio):
@@ -19,9 +10,9 @@ def ingresar(diccio):
     num = int(input("Ingresa el número telefonico: "))
     job = int(input("¿Usted trabaja?\n1) Si\n2) No\nSeleccione una opción: "))
     if job == 1:
-        diccio.insert(0,{"nombre": nom, "edad": age, "numero": ["numero"].append(num),"trabajo": True})
+        pass
     else:
-        diccio.insert(0,{"nombre": nom, "edad": age, "numero": ["numero"].append(num),"trabajo": False})
+        pass
 
 
 def update():
