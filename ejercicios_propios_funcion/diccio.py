@@ -1,7 +1,5 @@
 usuario = {
-    1: {"nombre": "Josh Dun", "edad": 37, "casado": True},
-    2: {"nombre": "Josh Dun", "edad": 37, "casado": True},
-    3: {"nombre": "Josh Dun", "edad": 37, "casado": True}
+    1: {"nombre": "Josh Dun", "edad": 37, "casado": True}
 }
 
 def ingresar(diccio):
