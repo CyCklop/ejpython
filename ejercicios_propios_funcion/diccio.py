@@ -12,7 +12,7 @@ def ingresar(diccio):
 
 def show(diccio):
     for key,value in diccio.items():
-        print(f"{key}-{value["nombre"]}")
+        print(f"{key}-Nombre: {value["nombre"]} Edad: {value["edad"]} Casado: {value["casado"]}")
 
 
 
