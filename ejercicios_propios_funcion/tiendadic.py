@@ -23,6 +23,7 @@ def comprar(diccio,cart):
 
 def show(diccio):
     for key,value in diccio.items():
+        print("La lista de articulos es de:")
         print(f"{key}.- {value["nombre"]}-{value["precio"]}")
 
 
