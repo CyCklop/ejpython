@@ -16,14 +16,14 @@ def comprar(diccio,cart):
     op = int(input("Selecciona el numero del producto a comprar: "))
     if op in diccio.keys():
         print(f"¡Has agregado al carrito el articulo {op}!")
-        cart.append(diccio.keys(op))
+        cart.append(diccio.keys()[op])
     else:
         print(f"El número de articulo {op} no existe..")
 
 
 def show(diccio):
+    print("La lista de articulos es de:")
     for key,value in diccio.items():
-        print("La lista de articulos es de:")
         print(f"{key}.- {value["nombre"]}-{value["precio"]}")
 
 
