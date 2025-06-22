@@ -26,13 +26,18 @@ def agregar(diccio,cart):
         print(f"El número {op} no esta en la lista de articulos...")
 
 def vercart(cart):
-    for i in enumerate(cart):
-        print(f"Articulos en carrito: {i}")
+    for i,a in enumerate(cart):
+        nombre,precio = a.values()
+        print(f"Articulos en carrito:\n{i+1}-{nombre}-${precio}")
 
 def verart(diccio):
     for key,value in diccio.items():
         print(f"{key}.- {value["nombre"]}-${value["precio"]}")
 
+def boleta(cart):
+    for i,a in enumerate(cart):
+        nombre,precio = a.values()
+        print(f"Tu boleta:\n{i+1}-{nombre}-${precio}")
 
 def menu():
     while True:
@@ -49,7 +54,7 @@ def menu():
                 case 4:
                     verart(articulos)
                 case 5:
-                    pass
+                    boleta(carrito)
                 case 6:
                     print("Saliendo...")
                     break
