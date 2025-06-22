@@ -16,7 +16,8 @@ def comprar(diccio,cart):
     op = int(input("Selecciona el numero del producto a comprar: "))
     if op in diccio.keys():
         print(f"¡Has agregado al carrito el articulo {op}!")
-        cart.append(diccio.keys()[op])
+        cart.append(diccio[op])
+        diccio.pop(op)
     else:
         print(f"El número de articulo {op} no existe..")
 
@@ -28,8 +29,8 @@ def show(diccio):
 
 
 def showcarr(cart):
-    for i in cart:
-        print(f"En el carrito llevas:\n{i}")
+    for product in enumerate(cart):
+        print(f"En el carrito llevas:\nArticulo: {product}")
 
 
 def boleta():
