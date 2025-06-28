@@ -1,29 +1,43 @@
-entradas = {}
+perfiles = {}
 
-def añadir(diccio):
-    nom = input("Ingrese el nombre del comprador: ")
-    age = int(input("Ingrese la edad: "))
-    code = input("Ingrese el codigo verificador: ")
-    diccio[nom]={"edad": age, "codigo": code}
+def iniciar(perfil):
+    nom = input("Ingrese el nombre de su perfil: ")
+    pas = input("Ingrese su contraseña: ")
+    if nom or pas not in perfil.items():
+        print(f"El perfil {nom}, no esta creado o la contraseña es incorrecta")
+    else:
+        print("¡Se accedido correctamente!")
+
+def registrar(perfil):
+    nom = input("Ingrese un nombre de perfil: ")
+    age = int(input("Ingrese su edad: "))
+    pas = input("Ingrese su contraseña: ")
+    perfil[nom]={"edad": age, "contraseña": pas}
+
+def show(perfil):
+    print("Los usuarios registrados son:")
+    for key,value in perfil.items():
+        print(f"Usuario: {key} -Edad: {value["edad"]} -Contraseña:{value["contraseña"]}")
+
 
 def menu():
     while True:
-        print(entradas)
+        print(perfiles)
         try:
-            print("***TICKETMASPY***\n1) Comprar Entrada\n2) Buscar comprador\n3) Borrar Compra\n4) Salir")
+            print("Red Social.PY\n1) Iniciar Sesión\n2) Registrarse\n3) Ver usuarios registrados\n4) Salir del sistema")
             op = int(input("Seleccione una opción: "))
             match op:
                 case 1:
-                    añadir(entradas)
+                    iniciar(perfiles)
                 case 2:
-                    pass
+                    registrar(perfiles)
                 case 3:
-                    pass
+                    show(perfiles)
                 case 4:
                     print("Saliendo del sistema...")
                     break
                 case _:
                     print("Error, ingrese una opción valida")
         except Exception:
-            print("Error, ingrese un dato válido")
+            print("Error, ingrese un valor valido")
 menu()
