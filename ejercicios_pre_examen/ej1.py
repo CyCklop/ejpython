@@ -1,12 +1,11 @@
 entradas = {}
 
-def val_code(codigo):
-    pass
-
 def añadir(diccio):
     nom = input("Ingrese el nombre del comprador: ")
     age = int(input("Ingrese la edad: "))
-    diccio[nom]={"edad": age}
+    code = input("Ingrese el codigo verificador: ")
+    diccio[nom]={"edad": age, "codigo": code}
+
 def menu():
     while True:
         print(entradas)
