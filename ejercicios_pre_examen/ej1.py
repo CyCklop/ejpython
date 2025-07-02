@@ -1,43 +1,53 @@
-perfiles = {}
+usuarios = {}
 
-def iniciar(perfil):
-    nom = input("Ingrese el nombre de su perfil: ")
-    pas = input("Ingrese su contraseña: ")
-    if nom or pas not in perfil.items():
-        print(f"El perfil {nom}, no esta creado o la contraseña es incorrecta")
+def validar(code):
+    if len(code)!= 6:
+        return False
+    if " " in code:
+        return False
+    return True
+
+def ingresar(diccio):
+    while True:
+        nom = input("Ingresa tu nombre: ")
+        code = input("Ingresa tu codigo: ")
+        if validar(code):
+            diccio[nom] = {"codigo": code}
+            print("¡Usuario y clave añadidos con exito!")
+            break
+        else:
+            print("Clave invalida intente denuevo...")
+
+def ver(diccio):
+    print("La lista de usuarios en sistema es de:")
+    for key,value in diccio.items():
+        print(f"Usuario: {key} --- Codigo: {value["codigo"]}")
+
+def pop(diccio):
+    op = input("Ingresa el nombre de usuario a borrar: ")
+    if op in diccio.keys():
+        diccio.pop(op)
+        print(f"Has borrado el usuario {op}")
     else:
-        print("¡Se accedido correctamente!")
-
-def registrar(perfil):
-    nom = input("Ingrese un nombre de perfil: ")
-    age = int(input("Ingrese su edad: "))
-    pas = input("Ingrese su contraseña: ")
-    perfil[nom]={"edad": age, "contraseña": pas}
-
-def show(perfil):
-    print("Los usuarios registrados son:")
-    for key,value in perfil.items():
-        print(f"Usuario: {key} -Edad: {value["edad"]} -Contraseña:{value["contraseña"]}")
-
+        print(f"El usuario {op} no se encuentra en el sistema...")
 
 def menu():
     while True:
-        print(perfiles)
         try:
-            print("Red Social.PY\n1) Iniciar Sesión\n2) Registrarse\n3) Ver usuarios registrados\n4) Salir del sistema")
-            op = int(input("Seleccione una opción: "))
+            print("****TicketMas.PY****\n1) Ingresar usuario al sistema\n2) Ver Sistema\n3) Borrar Usuario\n4) Salir")
+            op = int(input("Ingrese una opción: "))
             match op:
                 case 1:
-                    iniciar(perfiles)
+                    ingresar(usuarios)
                 case 2:
-                    registrar(perfiles)
+                    ver(usuarios)
                 case 3:
-                    show(perfiles)
+                    pop(usuarios)
                 case 4:
-                    print("Saliendo del sistema...")
+                    print("Saliendo del sistema....")
                     break
                 case _:
                     print("Error, ingrese una opción valida")
         except Exception:
-            print("Error, ingrese un valor valido")
+            print("Error, ingrese un dato valido")
 menu()
