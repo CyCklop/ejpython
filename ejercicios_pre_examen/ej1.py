@@ -22,7 +22,7 @@ def ingresar(diccio):
 def ver(diccio):
     print("La lista de usuarios en sistema es de:")
     for key,value in diccio.items():
-        print(f"Usuario: {key} --- Codigo: {value["codigo"]}")
+        print(f"Usuario: {key} --- Codigo: {value["codigo"]} --- Area: {value["area"]}")
 
 def pop(diccio):
     op = input("Ingresa el nombre de usuario a borrar: ")
