@@ -10,10 +10,11 @@ def validar(code):
 def ingresar(diccio):
     while True:
         nom = input("Ingresa tu nombre: ")
+        area = input("Ingresa que area compraste (G/V): ")
         code = input("Ingresa tu codigo: ")
         if validar(code):
-            diccio[nom] = {"codigo": code}
-            print("¡Usuario y clave añadidos con exito!")
+            diccio[nom] = {"codigo": code, "area": area}
+            print("¡Usuario, area y clave añadidos con exito!")
             break
         else:
             print("Clave invalida intente denuevo...")
