@@ -5,12 +5,17 @@ def validar(code):
         return False
     if " " in code:
         return False
+    if not code.isupper():
+        return False
     return True
 
 def ingresar(diccio):
     while True:
         nom = input("Ingresa tu nombre: ")
         area = input("Ingresa que area compraste (G/V): ")
+        if area != "G" and area != "V":
+            print("Selecciona un area valida (Incluyendo Mayusculas)")
+            continue
         code = input("Ingresa tu codigo: ")
         if validar(code):
             diccio[nom] = {"codigo": code, "area": area}
