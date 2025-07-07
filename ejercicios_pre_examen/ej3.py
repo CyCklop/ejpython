@@ -3,6 +3,8 @@ usuarios = {}
 def val_contra(contraseña):
     numeros = 0
     mayus = 0
+    if len(contraseña) != 6:
+        return False
     for c in contraseña:
         if c.isnumeric():
             numeros+=1
@@ -22,7 +24,7 @@ def crear(usuario):
         if age <= 12:
             print("¡Debes ser nayor de 12 años para crear un usuario!")
             continue
-        contra = input("**Tu contraseña debe contener 2 números y 1 letra mayuscula**\nCrea tu contraseña: ")
+        contra = input("**Tu contraseña debe contener 2 números y 1 letra mayuscula y un maximo de 6 caracteres**\nCrea tu contraseña: ")
         if val_contra(contra):
             print(f"¡Has creado el usuario {nom}!")
             usuario[nom]  = {"edad": age, "contraseña": contra}
