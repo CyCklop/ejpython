@@ -61,6 +61,7 @@ def actualizar_datos(auto):
 
 def menu():
     while True:
+        print(autos)
         try:
             print("1.- Ver Stock\n2.- Buscar precio más alto\n3.- Actualizar Stock\n4.- Borrar un Modelo\n5.- Actualizar Datos\n6.- Salir")
             op = int(input("Ingresa una opción: "))
