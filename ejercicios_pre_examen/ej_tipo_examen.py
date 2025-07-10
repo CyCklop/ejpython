@@ -51,9 +51,9 @@ def actualizar_datos(auto):
             if len(año) != 4:
                 print("***Error, ingrese un año valido***")
                 continue
-            ben = input("Ingrese que tipo de combustible usa: ")
+            com = input("Ingrese que tipo de combustible usa: ")
             lit = input("Ingrese cuanta capacidad tiene el estanque: ")
-            auto[pat] = [marca,año,ben,lit]
+            auto[pat] = [marca,año,com,lit]
             print(f"¡Auto patente {pat} añadido al sistema!")
             break
         else:
