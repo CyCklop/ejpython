@@ -10,7 +10,7 @@ stock = {
 def ver(stock):
     print("Stock Disponible:")
     for key,value in stock.items():
-        print(f"Modelo: {key} -- {value}")
+        print(f"Modelo: {key} -- Unidades: {value[0]} --- Valor por unidad: {value[1]}")
 
 def buscar(stock):
     pass
