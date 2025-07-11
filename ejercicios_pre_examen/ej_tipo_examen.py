@@ -1,10 +1,5 @@
-autos = {
-    'ABC123': ['Nissan', 2000, 'Gasolina', '1.7L']
-}
-stock = {
-    'ABC123': [10, 6500000]
-}
-
+autos = {}
+stock = {}
 
 
 def ver(stock):
@@ -16,7 +11,23 @@ def buscar(stock):
     pass
 
 def actualizar(stock):
-    pass
+    while True:
+        pat = input("Ingrese la patente del vehiculo: ")
+        if verificar_patente(pat):
+            input_stock = input("Ingrese el stock del vehiculo: ")
+            try:
+                stock_auto,precio_auto = stock[pat]
+                if input_stock == stock_auto:
+                    print("***No se puede ingresar un número de stock existente***\nEscriba un stock valido: ")
+                    continue
+                stock[pat][0] = input_stock
+            except KeyError:
+                precio = input("***No existe stock para esta patente, ingrese el precio: ")
+                stock[pat] = [input_stock,precio]
+            print(f"Has agregado el stock y precio del vehiculo: {pat}")
+            break
+        else:
+            print("***Error, ingrese una patente valida (4 letras mayusculas y 2 números)***")
 
 def borrar(auto,stock):
     pass
@@ -62,6 +73,7 @@ def actualizar_datos(auto):
 def menu():
     while True:
         print(autos)
+        print(stock)
         try:
             print("1.- Ver Stock\n2.- Buscar precio más alto\n3.- Actualizar Stock\n4.- Borrar un Modelo\n5.- Actualizar Datos\n6.- Salir")
             op = int(input("Ingresa una opción: "))
@@ -71,7 +83,7 @@ def menu():
                 case 2:
                     pass
                 case 3:
-                    pass
+                    actualizar(stock)
                 case 4:
                     pass
                 case 5:
