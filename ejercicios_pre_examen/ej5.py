@@ -1,8 +1,6 @@
 vehiculos = {}
 stock = {}
 
-
-
 def validación_patente(patente):
     if len(patente) != 6:
         return False
@@ -39,7 +37,6 @@ def ingresar_vehiculo(auto):
         else:
             print("***Error, ingrese una patente válida (4 Letras mayusculas y 2 números)***")
 
-
 def ingresar_stock(stock):
     while True:
         patente = input("Ingrese la patente del vehiculo: ")
@@ -73,13 +70,10 @@ def borrar_patente(auto,stock):
         else:
             print("Error, ingrese una patente válida (4 Letras mayusculas y 2 números)")
 
-
 def lista_stock(stock):
     print("El Stock disponible de vehiculos es de:")
     for key,value in stock.items():
         print(f"Patente: {key} --- Stock: {value[0]} --- Precio c/u: {value[1]}")
-
-
 
 def menu():
     while True:
@@ -100,7 +94,6 @@ def menu():
                     break
                 case _:
                     print("***Error, ingrese una opción válida***")
-        except Exception as e:
-            print(e)
+        except Exception:
             print("***Error, ingrese un tipo de dato válido***")
 menu()
