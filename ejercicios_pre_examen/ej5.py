@@ -46,6 +46,12 @@ def agregar_stock(stock):
         patente = input("Ingresa la patente del vehiculo: ")
         if verificar_patente(patente):
             input_stock = input("Ingresa el stock del vehiculo: ")
+            try:
+                input_stock,input_precio = stock[patente]
+                stock[patente][0] = input_stock
+            except KeyError:
+                input_stock = input("***No existe un stock para este vehiculo, ingrese uno: ")
+                stock[patente] = [input_stock,input_precio]
             input_precio = int(input("ingresa el precio del vehiculo"))
             stock[patente] = [input_stock,input_precio]
             print(f"Has agregado stock y precio al vehiculo patente {patente}")
