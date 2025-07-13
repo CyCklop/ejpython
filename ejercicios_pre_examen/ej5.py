@@ -1,7 +1,9 @@
-autos = {}
+vehiculos = {}
 stock = {}
 
-def verificar_patente(patente):
+
+
+def validación_patente(patente):
     if len(patente) != 6:
         return False
     if " " in patente:
@@ -21,73 +23,84 @@ def verificar_patente(patente):
         return False
     return True
 
-def agregar_vehiculo(auto):
+def ingresar_vehiculo(auto):
     while True:
-        try:
-            patente = input("Ingresa la patente del vehiculo: ")
-            if verificar_patente(patente):
-                marca = input("Ingresa la marca del vehiculo: ")
-                año = input("Ingresa el año del vehiculo: ")
-                if len(año) != 4:
-                    print("***Error, ingrese un año valido***")
-                    continue
-                gas = input("Ingresa el tipo de combustible: ")
-                capacidad = input("Ingresa la capacidad del estanque: ")
-                auto[patente] = [marca,año,gas,capacidad]
-                print(f"Has añadido el vehiculo patente {patente}")
-                break
-            else:
-                print("***Error, ingresa una patente valida (4 Letras Mayusculas y 2 Numeros)***")
-        except Exception:
-            print("***Error, ingresa un tipo de dato valido***")
-
-def agregar_stock(stock):
-    while True:
-        patente = input("Ingresa la patente del vehiculo: ")
-        if verificar_patente(patente):
-            input_stock = input("Ingresa el stock del vehiculo: ")
-            try:
-                input_stock,input_precio = stock[patente]
-                stock[patente][0] = input_stock
-            except KeyError:
-                input_stock = input("***No existe un stock para este vehiculo, ingrese uno: ")
-                stock[patente] = [input_stock,input_precio]
-            input_precio = int(input("ingresa el precio del vehiculo"))
-            stock[patente] = [input_stock,input_precio]
-            print(f"Has agregado stock y precio al vehiculo patente {patente}")
+        patente = input("Ingrese la patente del vehiculo: ")
+        if validación_patente(patente):
+            marca = input("Ingrese la marca del vehiculo: ")
+            año = input("Ingrese el año del vehiculo: ")
+            if len(año) != 4:
+                print("***Error, ingrese un año válido***")
+                continue
+            capacidad = float(input("Ingrese la capacidad del estanque: "))
+            auto[patente] = [marca,año,capacidad]
+            print(f"¡Vehiculo marca {marca} añadido exitosamente!")
             break
         else:
-            print("***Error, ingresa una patente valida (4 Letras Mayusculas y 2 Numeros)***")
+            print("***Error, ingrese una patente válida (4 Letras mayusculas y 2 números)***")
 
 
-def mostrar_stock(stock):
-    print("La lista de stock disponible es de: ")
+def ingresar_stock(stock):
+    while True:
+        patente = input("Ingrese la patente del vehiculo: ")
+        if validación_patente(patente):
+            input_stock = int(input(f"Ingrese el stock disponible para el vehiculo {patente}: "))
+            try:
+                stock_auto,precio_auto = stock[patente]
+                if input_stock == stock_auto:
+                    print(f"El vehiculo {patente} no puede tener el mismo stock...")
+                    continue
+                stock[patente][0] = input_stock
+            except KeyError:
+                print(f"¡Se ha agregado o actualizado el stock del vehiculo {patente}!")
+                input_precio = int(input(f"Ingrese el precio del vehiculo {patente}: "))
+                stock[patente] = [input_stock,input_precio]
+            print("¡Stock añadido correctamente!")
+            break
+        else:
+            print("Error, ingrese una patente válida (4 Letras mayusculas y 2 números)")
+
+def borrar_patente(auto,stock):
+    while True:
+        patente = input("Ingrese la patente a eliminar: ")
+        if validación_patente(patente):
+            if patente in auto:
+                del auto[patente]
+            if patente in stock:
+                del stock[patente]
+                print(f"Se ha eliminado los datos de la patente {patente} del sistema...")
+                break
+        else:
+            print("Error, ingrese una patente válida (4 Letras mayusculas y 2 números)")
+
+
+def lista_stock(stock):
+    print("El Stock disponible de vehiculos es de:")
     for key,value in stock.items():
-        print(f"Patente: {key} --- Stock: {value[0]} --- Precio: {value[1]}")
+        print(f"Patente: {key} --- Stock: {value[0]} --- Precio c/u: {value[1]}")
+
+
 
 def menu():
     while True:
-        print(autos)
-        print(stock)
         try:
-            print("1) Agregar vehiculo\n2) Agregar Stock\n3) Borrar Vehiculo/Stock\n4) Buscar Precio Más Alto\n5) Mostrar Stock\n6) Salir")
-            op = int(input("Ingresa una opción: "))
+            print("1) Ingresar un vehiculo\n2) Ingresar Stock\n3) Borrar una patente\n4) Lista de stock\n5) Salir")
+            op = int(input("Ingrese una opción: "))
             match op:
                 case 1:
-                    agregar_vehiculo(autos)
+                    ingresar_vehiculo(vehiculos)
                 case 2:
-                    agregar_stock(stock)
+                    ingresar_stock(stock)
                 case 3:
-                    pass
+                    borrar_patente(vehiculos,stock)
                 case 4:
-                    pass
+                    lista_stock(stock)
                 case 5:
-                    mostrar_stock(stock)
-                case 6:
-                    print("Saliendo...")
+                    print("Saliendo del sistema...")
                     break
                 case _:
-                    print("***Error, ingresa una opción valida***")
-        except Exception:
-            print("***Error, ingresa un tipo de dato valido***")
+                    print("***Error, ingrese una opción válida***")
+        except Exception as e:
+            print(e)
+            print("***Error, ingrese un tipo de dato válido***")
 menu()
